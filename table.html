@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="cs"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">		 	  
+<meta name="keywords" content="">			  
+<meta name="description" content="">			  
+<meta name="author" content="B interactive, bohacek@binteractive.cz">			
+<meta name="robots" content="all,follow">
+<meta name="viewport" content="width=device-width">
+<script async="" src="table_files/analytics.js"></script><script type="text/javascript" src="table_files/common.js"></script>
+<script type="text/javascript" src="table_files/myAdmin.js"></script>
+<link rel="stylesheet" type="text/css" href="table_files/common.css" media="all">
+<link rel="stylesheet" href="table_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" href="table_files/slick.css" type="text/css" media="all">
+<link rel="icon" type="image/vnd.microsoft.icon" href="https://web.pslib.cz/sites/pslib.cz/images/favicon.png">
+<script src="table_files/slick.js" type="text/javascript"></script>
+<script src="table_files/jquery.js" type="text/javascript"></script>
+<script type="text/javascript" src="table_files/up.js"></script>
+<script src="table_files/rmenu.js" type="text/javascript"></script>
+<script type="text/javascript" src="table_files/cookiebar.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){ i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments) },i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84251804-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+    	    	$(".side_menu ul ul").hide().find("a.active").parents().show();
+    	$(".side_menu a.active").siblings("ul").show();
+    	$(".side_menu a").live("click", function(event){
+    		if($(this).siblings("ul").length>0 && !$(this).siblings("ul").is(":visible") && $(window).width() > 1020) {
+    			event.preventDefault();
+    			$(this).siblings("ul").show();
+    		}
+    	});
+    	// side_menu responsivity
+    	var sidebarBackup = $(".side_menu > ul").html();
+    	function side_menu_renderer() {
+        	if($(window).width() <= 1020) {
+        		if($(".side_menu a[href='/pro-studenty/rozvrh']").length>0) {
+        			if($(".side_menu a[href='/pro-studenty/rozvrh']").siblings("ul").length>0) {
+        				$(".side_menu > ul").html($(".side_menu a[href='/pro-studenty/rozvrh']").siblings("ul").html());
+        			} else {
+        				$(".side_menu > ul").html($(".side_menu a[href='/pro-studenty/rozvrh']").closest("ul").html());
+        			}
+        		}
+        	} else {
+        		$(".side_menu > ul").html(sidebarBackup);
+        	}
+    		if($(".side_menu li").length == 0) {
+    			$(".side_bar").hide();
+    		} else {
+    			$(".side_bar").show();
+    		}
+    	}
+    	$(window).resize(side_menu_renderer);
+    	side_menu_renderer();
+    	if($(".side_menu h2").length>0) {
+    		if($(".path a").length>2) {
+    			$(".side_menu h2").html($(".path a").eq(2).text());
+    		} else {
+    			$(".side_menu h2").html($("h1").text());
+    		}
+    	}
+    });    
+</script>
+<title>Stálý rozvrh pro třídu P3  (Mach Miroslav, A106) | SPŠSE a VOŠ Liberec</title></head>
+<body cz-shortcut-listen="true">
+<div class="hlavni" id="nahoru">
+<header>
+<div class="obal_top">
+<div class="top">
+<div class="suplovani">
+<a href="https://web.pslib.cz/pro-studenty/suplovani"><span></span>Suplování</a>
+</div>
+<div class="rozvrh"><a href="https://web.pslib.cz/pro-studenty/rozvrh"><span></span> Rozvrh</a></div>
+<div class="bakalari"><a target="_blank" href="https://bakalar.pslib.cz/rodice/next/login.aspx"><span></span> Bakaláři</a></div>
+<div class="mail"><a target="_blank" href="http://gmail.pslib.cz/"><span></span> Email</a></div>
+<div class="kontakt"><a href="https://web.pslib.cz/kontakty"> <span></span>Kontakt</a></div>
+<div class="kb"><a target="_blank" href="https://pslib-my.sharepoint.com/personal/kb_ad_pslib_cz/_layouts/15/guestaccess.aspx?folderid=06437d9a4fd324f6699ae6f256450dd67&amp;authkey=Aa2nnz5q6fYmaRiaWLCO7mA&amp;expiration=2019-08-19T09%3a15%3a12.000Z"><span></span> Návody</a></div>		<div class="clr"></div>
+</div>
+</div>
+<div class="logo_search width">
+<div class="left">
+<div class="logo">
+<a class="PC" href="https://web.pslib.cz/"><img src="table_files/logo.svg" alt="STŘEDNÍ PRŮMYSLOVÁ ŠKOLA STROJNÍ A ELEKTROTECHNICKÁ A VYŠŠÍ ODBORNÁ ŠKOLA, LIBEREC 1, MASARYKOVA 3, P.O." width="246"></a>
+<a class="mobile" href="https://web.pslib.cz/"><img src="table_files/logo_circle.svg" alt="STŘEDNÍ PRŮMYSLOVÁ ŠKOLA STROJNÍ A ELEKTROTECHNICKÁ A VYŠŠÍ ODBORNÁ ŠKOLA, LIBEREC 1, MASARYKOVA 3, P.O." width="300" height="139"></a>
+</div>
+</div>
+<div class="right">
+<div class="icon">
+<div class="suplovani">
+<a href="https://web.pslib.cz/pro-studenty/suplovani"><span></span>Suplování</a>
+</div>
+<div class="rozvrh"><a href="https://web.pslib.cz/pro-studenty/rozvrh"><span></span> Rozvrh</a></div>
+<div class="bakalari"><a target="_blank" href="https://bakalar.pslib.cz/rodice/next/login.aspx"><span></span> Bakaláři</a></div>
+<div class="mail"><a target="_blank" href="http://gmail.pslib.cz/"><span></span> Email</a></div>
+<div class="kontakt"><a href="https://web.pslib.cz/kontakty"> <span></span>Kontakt</a></div>
+<div class="kb"><a target="_blank" href="https://pslib-my.sharepoint.com/personal/kb_ad_pslib_cz/_layouts/15/guestaccess.aspx?folderid=06437d9a4fd324f6699ae6f256450dd67&amp;authkey=Aa2nnz5q6fYmaRiaWLCO7mA&amp;expiration=2019-08-19T09%3a15%3a12.000Z"><span></span> Návody</a></div>		</div>
+<div class="clr"></div>
+<div class="vyhledavani">
+<form class="searchForm" method="get" action="/vyhledavani">
+<input name="sp" value="Vyhledat" onclick="if(this.value=='Vyhledat') this.value='';" type="text">
+<button type="submit"><span>Vyhledávat</span></button>
+</form>
+</div>
+<div class="datum">
+Dnes je
+sobota				19.
+květen
+</div>
+<div class="clr"></div>
+<!-- <div class="lang">
+<a href="/">cze</a>
+<a href="/en">en</a>
+<a href="/de">de</a>
+<a href="/fr">fr</a>
+</div> -->
+</div>
+<div class="clr"></div>
+</div>
+<nav>
+<div class="top_menu width">
+<div class="obal">
+<ul>
+<li class="active home"><a href="https://web.pslib.cz/"><img src="table_files/home.png" alt="Domů"></a></li>
+<li class=" ">
+<a href="https://web.pslib.cz/obory" class="">Obory</a>
+<ul>			<li class="first  ">
+<a href="https://web.pslib.cz/obory/strojirenstvi" class="">Strojírenství</a>
+<ul>					<li class="first  ">
+<a href="https://web.pslib.cz/obory/strojirenstvi/novinky" class="">Novinky</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/obory/strojirenstvi/oborove-aktuality" class="">Oborové aktuality</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/obory/strojirenstvi/zamereni" class="">Zaměření</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/obory/strojirenstvi/vyucujici" class="">Vyučující</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/obory/strojirenstvi/vybaveni" class="">Vybavení</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/obory/strojirenstvi/studentske-aktivity" class="">Studentské aktivity</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/obory/strojirenstvi/ke-stazeni" class="">Ke stažení</a>
+</li>
+<li class=" last ">
+<a href="https://web.pslib.cz/obory/strojirenstvi/spolupracujici-firmy" class="">Spolupracující firmy</a>
+</li>
+</ul>							</li>
+<li class="  ">
+<a href="https://web.pslib.cz/obory/elektrotechnika" class="">Elektrotechnika</a>
+<ul>					<li class="first  ">
+<a href="https://web.pslib.cz/obory/elektrotechnika/novinky" class="">Novinky</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/obory/elektrotechnika/aktuality-2" class="">Oborové aktuality</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/obory/elektrotechnika/zamereni" class="">Zaměření oboru</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/obory/elektrotechnika/odborne-ucebny" class="">Odborné učebny</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/obory/elektrotechnika/technicke-vybaveni" class="">Technické vybavení</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/obory/elektrotechnika/vyucujici" class="">Vyučující (elektro)</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/obory/elektrotechnika/fotogalerie" class="">Fotogalerie</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/obory/elektrotechnika/ke-stazeni" class="">Ke stažení</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/obory/elektrotechnika/spratelene-firmy" class="">Spřátelené firmy</a>
+</li>
+<li class=" last ">
+<a href="https://web.pslib.cz/obory/elektrotechnika/asa" class="">Práce pro absolventy elektro</a>
+</li>
+</ul>							</li>
+<li class="  ">
+<a href="https://web.pslib.cz/obory/informacni-technologie" class="">Informační technologie</a>
+<ul>					<li class="first  ">
+<a href="https://web.pslib.cz/obory/informacni-technologie/novinky" class="">Novinky</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/obory/informacni-technologie/oborove-aktuality" class="">Oborové aktuality</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/obory/informacni-technologie/zamereni-oboru" class="">Zaměření oboru</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/obory/informacni-technologie/technicke-vybaveni" class="">Technické vybavení</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/obory/informacni-technologie/vyucujici" class="">Vyučující</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/obory/informacni-technologie/ke-stazeni" class="">Ke stažení</a>
+</li>
+<li class=" last ">
+<a href="https://web.pslib.cz/obory/informacni-technologie/vyukove-materialy" class="">Výukové materiály</a>
+</li>
+</ul>							</li>
+<li class=" last ">
+<a href="https://web.pslib.cz/obory/technicke-lyceum" class="">Technické lyceum</a>
+<ul>					<li class="first  ">
+<a href="https://web.pslib.cz/obory/technicke-lyceum/novinky" class="">Novinky</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/obory/technicke-lyceum/oborove-aktuality" class="">Oborové aktuality</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/obory/technicke-lyceum/zamereni-oboru" class="">Zaměření oboru</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/obory/technicke-lyceum/vyucujici" class="">Vyučující</a>
+</li>
+<li class=" last ">
+<a href="https://web.pslib.cz/obory/technicke-lyceum/maturitni-a-rocnikove-prace-" class="">Maturitní a ročníkové práce </a>
+</li>
+</ul>							</li>
+</ul>			</li>
+<li class=" ">
+<a href="https://web.pslib.cz/o-skole" class="">O škole</a>
+<ul>			<li class="first  ">
+<a href="https://web.pslib.cz/o-skole/novinky" class="">Novinky</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/o-skole/uspechy" class="">Úspěchy</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/o-skole/projekty" class="">Projekty</a>
+<ul>					<li class="first last ">
+<a href="https://web.pslib.cz/o-skole/projekty/erasmus" class="">Erasmus</a>
+</li>
+</ul>							</li>
+<li class="  ">
+<a href="https://web.pslib.cz/o-skole/galerie" class="">Galerie</a>
+<ul>					<li class="first  ">
+<a href="https://web.pslib.cz/o-skole/galerie/140-vyroci-zalozeni-skoly" class="">140. výročí založení školy</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/o-skole/galerie/soutez-solarnich-vozitek-" class="">Soutěž solárních vozítek </a>
+</li>
+<li class=" last ">
+<a href="https://web.pslib.cz/o-skole/galerie/soc-studentska-odborna-cinnost" class="">SOČ - Studentská Odborná Činnost</a>
+</li>
+</ul>							</li>
+<li class="  ">
+<a href="https://web.pslib.cz/o-skole/dokumenty" class="">Dokumenty</a>
+<ul>					<li class="first  ">
+<a href="https://web.pslib.cz/o-skole/dokumenty/vyrocni-zpravy" class="">Výroční zprávy</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/o-skole/dokumenty/pokyny-a-rady" class="">Pokyny a řády</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/o-skole/dokumenty/ostatni" class="">Ostatní</a>
+</li>
+<li class=" last ">
+<a href="https://web.pslib.cz/o-skole/dokumenty/formulare-ke-stazeni" class="">Formuláře ke stažení</a>
+</li>
+</ul>							</li>
+<li class="  ">
+<a href="https://web.pslib.cz/o-skole/kalendar-akci" class="">Kalendář akcí</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/o-skole/spolupracujici-firmy" class="">Spolupracující firmy</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/o-skole/software" class="">Software</a>
+<ul>					<li class="first last ">
+<a href="https://web.pslib.cz/o-skole/software/imagine" class="">Imagine</a>
+</li>
+</ul>							</li>
+<li class="  ">
+<a href="https://web.pslib.cz/o-skole/pocitacova-sit" class="">Počítačová síť</a>
+</li>
+<li class=" last ">
+<a href="https://web.pslib.cz/o-skole/skolni-aplikace" class="">Školní aplikace</a>
+</li>
+</ul>			</li>
+<li class=" active">
+<a href="https://web.pslib.cz/pro-studenty" class="active">Pro studenty</a>
+<ul>			<li class="first  ">
+<a href="https://web.pslib.cz/pro-studenty/cizi-jazyky" class="">Cizí jazyky</a>
+<ul>					<li class="first  ">
+<a href="https://web.pslib.cz/pro-studenty/cizi-jazyky/novinky" class="">Novinky</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/cizi-jazyky/oborove-aktuality" class="">Oborové aktuality</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/cizi-jazyky/vyucujici" class="">Vyučující</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/cizi-jazyky/zajimave-odkazy-a-kontakty" class="">Zajímavé odkazy a kontakty</a>
+</li>
+<li class=" last ">
+<a href="https://web.pslib.cz/pro-studenty/cizi-jazyky/galerie" class="">Galerie</a>
+</li>
+</ul>							</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/prirodovedne-predmety" class="">Přírodovědné předměty</a>
+<ul>					<li class="first  ">
+<a href="https://web.pslib.cz/pro-studenty/prirodovedne-predmety/novinky" class="">Novinky</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/prirodovedne-predmety/vyucujici" class="">Vyučující</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/prirodovedne-predmety/galerie" class="">Galerie</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/prirodovedne-predmety/zajimave-odkazy" class="">Zajímavé odkazy</a>
+</li>
+<li class=" last ">
+<a href="https://web.pslib.cz/pro-studenty/prirodovedne-predmety/literatura" class="">LITERATURA</a>
+</li>
+</ul>							</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/praxe" class="">Praxe</a>
+<ul>					<li class="first  ">
+<a href="https://web.pslib.cz/pro-studenty/praxe/vyucujici" class="">Vyučující</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/praxe/aktuality" class="">Novinky</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/praxe/registrace-praxi" class="">Odborné praxe 2. a 3. ročníků</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/praxe/provozni-predpisy" class="">Provozní předpisy</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/praxe/stridani-skupin" class="">Organizace praxe ve školním roce</a>
+</li>
+<li class=" last ">
+<a href="https://web.pslib.cz/pro-studenty/praxe/praxe-4-rocniku" class="">Praxe 4. ročníků</a>
+</li>
+</ul>							</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/bakalari" class="">Bakaláři</a>
+</li>
+<li class="  active">
+<a href="https://web.pslib.cz/pro-studenty/rozvrh" class="active">Rozvrh</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/suplovani" class="">Suplování</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/informace-k-maturite" class="">Informace k maturitě</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/ucebni-plany" class="">Učební plány</a>
+<ul>					<li class="first  ">
+<a href="https://web.pslib.cz/pro-studenty/ucebni-plany/2016-2017" class="">2016/2017</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/ucebni-plany/aktualni/2015-2016" class="">2015/2016</a>
+</li>
+<li class=" last ">
+<a href="https://web.pslib.cz/pro-studenty/ucebni-plany/aktualni/2014-2015" class="">2014/2015</a>
+</li>
+</ul>							</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/vychovne-poradenstvi" class="">Výchovné poradenství</a>
+<ul>					<li class="first  ">
+<a href="https://web.pslib.cz/pro-studenty/vychovne-poradenstvi/desatero-spravneho-uceni" class="">Desatero správného učení</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/vychovne-poradenstvi/metoda-5-p" class="">Metoda 5 P</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/vychovne-poradenstvi/specificke-poruchy-uceni" class="">Specifické poruchy učení</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/vychovne-poradenstvi/poruchy-uceni-a-jednotlive-predmety" class="">Poruchy učení a jednotlivé předměty</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/vychovne-poradenstvi/zajimave-odkazy" class="">Zajímavé odkazy</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/vychovne-poradenstvi/minimalni-preventivni-program" class="">Minimální preventivní program</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/vychovne-poradenstvi/novinky" class="">Novinky</a>
+</li>
+<li class=" last ">
+<a href="https://web.pslib.cz/pro-studenty/vychovne-poradenstvi/kontakty-a-odkazy" class="">Kontakty a odkazy</a>
+</li>
+</ul>							</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/lyzarsky-vycvikovy-kurz" class="">Lyžařský výcvikový kurz</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-studenty/harmonogram-roku" class="">Harmonogram roku</a>
+</li>
+<li class=" last ">
+<a href="https://web.pslib.cz/pro-studenty/sportovne-turisticky-kurz" class="">Sportovně turistický kurz</a>
+</li>
+</ul>			</li>
+<li class=" ">
+<a href="https://web.pslib.cz/pro-uchazece" class="">Pro uchazeče</a>
+<ul>			<li class="first  ">
+<a href="https://web.pslib.cz/pro-uchazece/prijimaci-zkousky" class="">Přijímací zkoušky</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-uchazece/studijni-obory" class="">Studijní obory</a>
+<ul>					<li class="first  ">
+<a href="https://web.pslib.cz/pro-uchazece/studijni-obory/26-41-m-01-elektrotechnika-automatizace-a-sdelovaci-technika" class="">26 - 41 - M/01 elektrotechnika - automatizace a sdělovací technika</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-uchazece/studijni-obory/26-41-m-01-elektrotechnika-prumyslova-elektrotechnika-vykonova-elektronika-a-ridici-systemy" class="">26 - 41 - M/01 elektrotechnika - průmyslová elektrotechnika, výkonová elektronika a řídící systémy</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-uchazece/studijni-obory/18-20-m-01-informacni-technologie-programovani-webove-aplikace-a-pocitacove-site" class="">18 - 20 - M/01 informační technologie - programování, webové aplikace a počítačové sítě</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-uchazece/studijni-obory/23-41-m-01-strojirenstvi-pocitacova-podpora-techniky" class="">23 - 41 - M/01 strojírenství - počítačová podpora techniky</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-uchazece/studijni-obory/23-41-m-01-strojirenstvi-mechatronika" class="">23 - 41 - M/01 strojírenství - mechatronika</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-uchazece/studijni-obory/78-42-m-01-informatika-multimedia-a-design-3D" class="">78 - 42 - M/01 - informatika, multimédia a design (3D)</a>
+</li>
+<li class=" last ">
+<a href="https://web.pslib.cz/pro-uchazece/studijni-obory/78-42-m-01-informatika-multimedia-a-design-webdesign" class="">78 - 42 - M/01 - informatika, multimédia a design (webdesign)</a>
+</li>
+</ul>							</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-uchazece/proc-studovat-u-nas-na-skole-" class="">Proč studovat u nás na škole?</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-uchazece/soboty-s-technikou" class="">Soboty s technikou</a>
+<ul>					<li class="first last ">
+<a href="https://web.pslib.cz/pro-uchazece/soboty-s-technikou/fotogalerie" class="">Fotogalerie</a>
+</li>
+</ul>							</li>
+<li class=" last ">
+<a href="https://web.pslib.cz/pro-uchazece/den-otevrenych-dveri" class="">Den otevřených dveří</a>
+</li>
+</ul>			</li>
+<li class=" ">
+<a href="https://web.pslib.cz/pro-verejnost" class="">Pro veřejnost</a>
+<ul>			<li class="first  ">
+<a href="https://web.pslib.cz/pro-studenty/skolni-jidelna" class="">Školní jídelna</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-verejnost/verejne-zakazky" class="">Veřejné zakázky</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-verejnost/zajimavosti" class="">Zajímavosti</a>
+<ul>					<li class="first  ">
+<a href="https://web.pslib.cz/pro-verejnost/zajimavosti/prehled-absolventu" class="">Přehled absolventů od roku 1945</a>
+</li>
+<li class=" last ">
+<a href="https://web.pslib.cz/pro-verejnost/zajimavosti/sbirka-pohledu-skoly" class="">Sbírka pohledů školy</a>
+</li>
+</ul>							</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-verejnost/nabidka-prace-pro-absolventy" class="">Nabídka práce pro absolventy</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-verejnost/prumka-tv" class="">Průmka TV</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-verejnost/skolni-casopis" class="">Školní časopis</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/pro-verejnost/detska-univerzita" class="">Dětská univerzita</a>
+</li>
+<li class=" last ">
+<a href="https://web.pslib.cz/pro-verejnost/financni-dokumenty-" class="">Finanční dokumenty </a>
+</li>
+</ul>			</li>
+<li class=" ">
+<a href="https://web.pslib.cz/vos" class="">VOŠ</a>
+<ul>			<li class="first  ">
+<a href="https://web.pslib.cz/vos/novinky" class="">Novinky</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/vos/pro-studenty" class="">Pro studenty</a>
+<ul>					<li class="first  ">
+<a href="https://web.pslib.cz/vos/pro-studenty/predmety" class="">Předměty</a>
+</li>
+<li class=" last ">
+<a href="https://web.pslib.cz/vos/pro-studenty/ucebni-plany" class="">Učební plány</a>
+</li>
+</ul>							</li>
+<li class="  ">
+<a href="https://web.pslib.cz/vos/pro-uchazece" class="">Pro uchazeče</a>
+<ul>					<li class="first  ">
+<a href="https://web.pslib.cz/vos/pro-uchazece/prijimaci-rizeni" class="">Přijímací řízení</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/vos/pro-uchazece/obor-prumyslova-elektrotechnika" class="">Obor Průmyslová elektrotechnika</a>
+</li>
+<li class=" last ">
+<a href="https://web.pslib.cz/vos/pro-uchazece/studijni-plany" class="">Učební plány oboru</a>
+</li>
+</ul>							</li>
+<li class="  ">
+<a href="https://web.pslib.cz/vos/dokumenty" class="">Dokumenty</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/vos/galerie" class="">Galerie</a>
+<ul>					<li class="first  ">
+<a href="https://web.pslib.cz/vos/galerie/absolutorium-2011-2012" class="">ABSOLUTORIUM 2011/2012</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/vos/galerie/absolutorium-2010-2011" class="">ABSOLUTORIUM 2010/2011</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/vos/galerie/absolutorium-2009-2010" class="">ABSOLUTORIUM 2009/2010</a>
+</li>
+<li class=" last ">
+<a href="https://web.pslib.cz/vos/galerie/absolutorium-2008-2009" class="">Absolutorium 2008/2009</a>
+</li>
+</ul>							</li>
+<li class=" last ">
+<a href="https://web.pslib.cz/vos/kontakty" class="">Kontakty</a>
+<ul>					<li class="first  ">
+<a href="https://web.pslib.cz/vos/vyucujici" class="">Vyučující</a>
+</li>
+<li class=" last ">
+<a href="https://web.pslib.cz/vos/kontakty/studijni-oddeleni" class="">Studijní oddělení</a>
+</li>
+</ul>							</li>
+</ul>			</li>
+<li class="last ">
+<a href="https://web.pslib.cz/kontakty" class="">Kontakty</a>
+<ul>			<li class="first  ">
+<a href="https://web.pslib.cz/kontakty/vedeni-skoly" class="">Vedení školy</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/kontakty/zamestnanci" class="">Zaměstnanci</a>
+</li>
+<li class="  ">
+<a href="https://web.pslib.cz/kontakty/studijni-oddeleni" class="">Studijní oddělení</a>
+</li>
+<li class=" last ">
+<a href="https://web.pslib.cz/kontakty/odkazy" class="">Odkazy</a>
+</li>
+</ul>			</li>
+</ul>
+<script type="text/javascript">
+  $(".menu li").hover(function() { $(this).addClass("hover"); }, function() { $(this).removeClass("hover"); });
+</script>
+<div class="clr"></div>
+</div>
+</div>
+<script type="text/javascript">
+		rmenu.init($(".top_menu"), "Stálý rozvrh pro třídu P3  (Mach Miroslav, A106)");
+	</script>
+</nav><div class="nadpis width">
+<h1>Stálý rozvrh pro třídu P3  (Mach Miroslav, A106)</h1>
+</div>	
+</header>
+<main>
+<div class="text_box_obal">
+<div class="text_box width">
+<div class="cestar">
+<div class="path">
+<a href="https://web.pslib.cz/">Úvod</a> »
+<a href="https://web.pslib.cz/pro-studenty">Pro studenty</a> »
+Rozvrh
+</div>
+</div>
+<div class="PA" id="PA_0">
+<div class="item " id="node_2164" data-id="2164">
+<div class="item_body">
+<div class="rozvrhyToolbar">
+<div class="BM BM_sameWidth ucebna">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Učebna &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<div class="BM_bubble rozvrhyToolbar_bubble" style="display:none;">
+<ul class="margin">
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:144">144</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:315">315</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A023">A023</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A105">A105</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A106">A106</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A108">A108</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A110">A110</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A111">A111</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A112">A112</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A117">A117</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A120">A120</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A121">A121</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A123">A123</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A144">A144</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A211">A211</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A230">A230</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A235">A235</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A236">A236</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A237">A237</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A238">A238</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A241">A241</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A242">A242</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A243">A243</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A244">A244</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A245">A245</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A305">A305</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A307">A307</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A311">A311</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A315">A315</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A317">A317</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A319">A319</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A320">A320</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A321">A321</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A323">A323</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A324">A324</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A325">A325</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A327">A327</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A330">A330</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:B008">B008</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:B104">B104</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:B105">B105</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:B107">B107</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:B110">B110</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:B117">B117</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:B120">B120</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:B124">B124</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:C103">C103</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:C203">C203</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:D006">D006</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:D104">D104</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:D105">D105</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:D114">D114</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:D121">D121</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:D122">D122</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:D201">D201</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:D206">D206</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/room:D207">D207</a></li>
+</ul>
+</div>
+</div>
+<div class="BM BM_sameWidth trida">Třída: P3		<div class="BM_bubble rozvrhyToolbar_bubble" style="display:none;">
+<ul class="margin">
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:E1A">E1A</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:E1B">E1B</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:E2A">E2A</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:E2B">E2B</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:E3A">E3A</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:E3B">E3B</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:E4A">E4A</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:E4B">E4B</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:L1">L1</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:L2">L2</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:L3">L3</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:L4">L4</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:P1">P1</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:P2">P2</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:P3">P3</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:P4">P4</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:S1A">S1A</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:S1B">S1B</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:S2A">S2A</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:S2B">S2B</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:S3A">S3A</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:S3B">S3B</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:S4A">S4A</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:S4B">S4B</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:V3E">V3E</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/class:V3P">V3P</a></li>
+</ul>
+</div>
+</div>
+<div class="BM BM_sameWidth ucitel">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Vyučující &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+<div class="BM_bubble rozvrhyToolbar_bubble" style="display:none;">
+<ul class="margin">
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:B%C3%A1">Bernátová Zuzana</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Bo">Boháček Jan</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Bz">Bouzek Jiří</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Br">Brodský Vojtěch</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Bu">Burian Jindřich</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:%C4%8Ce">Černá Alice</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Dk">Dousková Jana</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:En">Engelmann Karel</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Hj">Haňáček Jiří</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Hk">Havlík Radek</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:H%C3%A1">Holubcová Blanka</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:H%C5%99">Hoření Vladimíra</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Hn">Hrnčíř Pavel</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Hu">Hujer Petr</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Ch">Choutka Jan</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:J%C4%8D">Jenčová Leona</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Jk">Jiráková Kateřina</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:J%C3%A1">Jirsáková Jiřina</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Kn">Kalinová Jana</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Kz">Kazda Tomáš</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:K%C3%A1">Kirschnerová Eva</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Kw">Kolnerová Michaela</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Ko">Kopal Ivan</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Kv">Körnerová Veronika</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Kj">Krajcsovicsová Lenka</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Kr">Král Miloš</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Kp">Králová Pavla</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Km">Kramsová Marie</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Mk">Krotilová Martina</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Kt">Krotil Stanislav</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Kk">Kubíček Jaromír</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Kx">Kubín Jiří</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Ku">Kucko Miroslav</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Kh">Kulhavý Jiří</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Md">Mader Zbyněk</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Ml">Machálková Lucie</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Ma">Mach Miroslav</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Na">Najman Aleš</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Nn">Neumanová Eva</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Os">Osčádal Jaromír</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Pn">Pantálková Alena</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Pe">Petříček Ivo</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Pl">Poláková Eva</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Po">Pomikálek Karel</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Pm">Pospíchal Marek</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:P%C5%A1">Prokeš Vladimír</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Rj">Rejc Ivo</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Za">Rossmannová Kristýna</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:R%C3%A1">Rozkovcová Aneta</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Ry">Rychtář Vilém</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:S%C4%8D">Salačová Dagmar</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Se">Semerád Jaroslav</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Sd">Slánský Dalibor</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:St">Stehlík Michal</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:%C5%A0m">Šímová Eva</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:%C5%A0i">Šimůnek Jan</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Tb">Táborský Petr</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Tn">Technik Jan</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Te">Tesař Ondřej</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Va">Valentová Jarmila</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Ve">Vestfál Jiří</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Zv">Zákoucký Vít</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Zd">Zdráhala Petr</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Ze">Zenkl Petr</a></li>
+</ul>
+</div>
+</div>
+<a class="tisk" href="#" onclick="event.preventDefault(); printthis();">Vytisknout</a>
+</div>
+<script type="text/javascript" src="table_files/bm.js"></script>
+<div class="tableResponsiveWrapper">
+<table id="rozvrh">
+<thead>
+<tr>
+<th style="font-size: 10px;">(nyní je sudý týden)</th>
+<th>1<div> 8:00-8:45</div></th>
+<th>2<div> 8:55-9:40</div></th>
+<th>3<div>10:00-10:45</div></th>
+<th>4<div>10:55-11:40</div></th>
+<th>5<div>11:50-12:35</div></th>
+<th>6<div>12:45-13:30</div></th>
+<th>7<div>13:40-14:25</div></th>
+<th>8<div>14:35-15:20</div></th>
+<th>9<div>15:25-16:10</div></th>
+<th>10<div>16:25-17:10</div></th>
+</tr>
+</thead>
+<tbody>
+<tr class="dark">
+<th rowspan="2">Po</th>
+<td><span class="eventLabel">PRG</span> (sk 1)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:St">St</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A110">A110</a>)</td>
+<td><span class="eventLabel">PRG</span> (sk 1)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:St">St</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A110">A110</a>)</td>
+<td rowspan="2"><span class="eventLabel">MAT</span><br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:K%C3%A1">Ká</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A106">A106</a>)</td>
+<td rowspan="2"><span class="eventLabel">CJL</span><br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:H%C3%A1">Há</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A106">A106</a>)</td>
+<td><span class="eventLabel">ASW</span> (sk 1)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:St">St</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A211">A211</a>)</td>
+<td><span class="eventLabel">ASW</span> (sk 1)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:St">St</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A211">A211</a>)</td>
+<td><span class="eventLabel">ANJ</span> (Aj 1)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:S%C4%8D">Sč</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A106">A106</a>)</td>
+<td rowspan="2"> </td>
+<td rowspan="2"> </td>
+<td rowspan="2"> </td>
+</tr>
+<tr class="dark">
+<td><span class="eventLabel">PRG</span> (sk 2)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Pm">Pm</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A211">A211</a>)</td>
+<td><span class="eventLabel">PRG</span> (sk 2)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Pm">Pm</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A211">A211</a>)</td>
+<td><span class="eventLabel">ASW</span> (sk 2)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Kz">Kz</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A110">A110</a>)</td>
+<td><span class="eventLabel">ASW</span> (sk 2)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Kz">Kz</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A110">A110</a>)</td>
+<td><span class="eventLabel">ANJ</span> (Aj 2)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Kp">Kp</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A319">A319</a>)</td>
+</tr>
+<tr>
+<th rowspan="2">Út</th>
+<td rowspan="2"><span class="eventLabel">AUT</span><br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Hn">Hn</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A106">A106</a>)</td>
+<td><span class="eventLabel">ANJ</span> (Aj 1)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:S%C4%8D">Sč</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A242">A242</a>)</td>
+<td><span class="eventLabel">OPS</span> (sk 1)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Pm">Pm</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A108">A108</a>)</td>
+<td><span class="eventLabel">OPS</span> (sk 1)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Pm">Pm</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A108">A108</a>)</td>
+<td rowspan="2"><span class="eventLabel">OPS</span><br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:P%C5%A1">Pš</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A106">A106</a>)</td>
+<td rowspan="2"><span class="eventLabel">CJL</span><br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:H%C3%A1">Há</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A106">A106</a>)</td>
+<td rowspan="2"> </td>
+<td rowspan="2"><span class="eventLabel">ZSV</span><br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Kj">Kj</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A106">A106</a>)</td>
+<td rowspan="2"><span class="eventLabel">ZSV</span><br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Kj">Kj</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A106">A106</a>)</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td><span class="eventLabel">ANJ</span> (Aj 2)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Kp">Kp</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A325">A325</a>)</td>
+<td><span class="eventLabel">OPS</span> (sk 2)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:P%C5%A1">Pš</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:B110">B110</a>)</td>
+<td><span class="eventLabel">OPS</span> (sk 2)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:P%C5%A1">Pš</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:B110">B110</a>)</td>
+</tr>
+<tr class="dark">
+<th>St</th>
+<td> </td>
+<td><span class="eventLabel">ELT</span><br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Ma">Ma</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A106">A106</a>)</td>
+<td><span class="eventLabel">ASW</span><br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:St">St</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A144">A144</a>)</td>
+<td><span class="eventLabel">OPS</span><br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:P%C5%A1">Pš</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A106">A106</a>)</td>
+<td><span class="eventLabel">TEV</span> (<a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Ch">Ch</a>l)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Zv">Zv</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:C103">C103</a>)</td>
+<td><span class="eventLabel">TEV</span> (<a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Ch">Ch</a>l)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Zv">Zv</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:C103">C103</a>)</td>
+<td><span class="eventLabel">MIT</span><br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Pm">Pm</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A106">A106</a>)</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<th rowspan="3">Čt</th>
+<td rowspan="3"><span class="eventLabel">MAT</span><br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:K%C3%A1">Ká</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A106">A106</a>)</td>
+<td rowspan="3"><span class="eventLabel">AUT</span><br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Hn">Hn</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A106">A106</a>)</td>
+<td rowspan="3"><span class="eventLabel">ELT</span><br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Ma">Ma</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A106">A106</a>)</td>
+<td><span class="eventLabel">PRA</span> (<span class="eventLabel">PRA</span>1)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Br">Br</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:B107">B107</a>)</td>
+<td><span class="eventLabel">PRA</span> (<span class="eventLabel">PRA</span>1)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Br">Br</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:B107">B107</a>)</td>
+<td><span class="eventLabel">PRA</span> (<span class="eventLabel">PRA</span>1)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Br">Br</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:B107">B107</a>)</td>
+<td rowspan="3"> </td>
+<td rowspan="3"> </td>
+<td rowspan="3"> </td>
+<td rowspan="3"> </td>
+</tr>
+<tr>
+<td><span class="eventLabel">PRA</span> (<span class="eventLabel">PRA</span>2)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Po">Po</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:D206">D206</a>)</td>
+<td><span class="eventLabel">PRA</span> (<span class="eventLabel">PRA</span>2)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Po">Po</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:D206">D206</a>)</td>
+<td><span class="eventLabel">PRA</span> (<span class="eventLabel">PRA</span>2)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Po">Po</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:D206">D206</a>)</td>
+</tr>
+<tr>
+<td><span class="eventLabel">PRA</span> (<span class="eventLabel">PRA</span>3)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Ma">Ma</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:B008">B008</a>)</td>
+<td><span class="eventLabel">PRA</span> (<span class="eventLabel">PRA</span>3)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Ma">Ma</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:B008">B008</a>)</td>
+<td><span class="eventLabel">PRA</span> (<span class="eventLabel">PRA</span>3)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Ma">Ma</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:B008">B008</a>)</td>
+</tr>
+<tr class="dark">
+<th rowspan="6">Pá</th>
+<td rowspan="6"><span class="eventLabel">ELT</span><br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Ma">Ma</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A106">A106</a>)</td>
+<td rowspan="6"><span class="eventLabel">OPS</span><br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:P%C5%A1">Pš</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A106">A106</a>)</td>
+<td rowspan="2" class="smaller"><span class="eventLabel">AUT</span> (<span class="eventLabel">PRA</span>1)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Hn">Hn</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A111">A111</a>)</td>
+<td rowspan="2" class="smaller"><span class="eventLabel">AUT</span> (<span class="eventLabel">PRA</span>1)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Hn">Hn</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A111">A111</a>)</td>
+<td rowspan="3"><span class="eventLabel">ANJ</span> (Aj 1)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:S%C4%8D">Sč</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A106">A106</a>)</td>
+<td rowspan="6"><span class="eventLabel">MAT</span><br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:K%C3%A1">Ká</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A106">A106</a>)</td>
+<td rowspan="6"> </td>
+<td rowspan="6"> </td>
+<td rowspan="6"> </td>
+<td rowspan="6"> </td>
+</tr>
+<tr class="dark">
+</tr>
+<tr class="dark">
+<td rowspan="2" class="smaller"><span class="eventLabel">ELT</span> (<span class="eventLabel">PRA</span>2)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Ma">Ma</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A121">A121</a>)</td>
+<td rowspan="2" class="smaller"><span class="eventLabel">ELT</span> (<span class="eventLabel">PRA</span>2)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Ma">Ma</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A121">A121</a>)</td>
+</tr>
+<tr class="dark">
+<td rowspan="3"><span class="eventLabel">ANJ</span> (Aj 2)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Kp">Kp</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A307">A307</a>)</td>
+</tr>
+<tr class="dark">
+<td rowspan="2" class="smaller"><span class="eventLabel">MIT</span> (<span class="eventLabel">PRA</span>3)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Pm">Pm</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A108">A108</a>)</td>
+<td rowspan="2" class="smaller"><span class="eventLabel">MIT</span> (<span class="eventLabel">PRA</span>3)<br><a href="https://web.pslib.cz/pro-studenty/rozvrh/teacher:Pm">Pm</a>  (<a href="https://web.pslib.cz/pro-studenty/rozvrh/room:A108">A108</a>)</td>
+</tr>
+<tr class="dark">
+</tr>
+<tr class="dark">
+</tr>
+</tbody>
+</table>
+</div>
+<script type="text/javascript">
+function printthis() {
+	$("h1, #rozvrh").appendTo("body");
+	$("body").css("background", "#fff").children().not("h1, #rozvrh").hide();
+	window.print();
+}
+$("#rozvrh th:first").css("font-size", "10px").html('(nyní je sudý týden)');
+// tr.dark
+var cols = $("#rozvrh thead th").length;
+var dark = false;
+var rowspan = 1;
+$("#rozvrh tbody tr").each(function(){
+	if($(this).children("td").length==cols-1) {
+		dark = !dark;
+		if($(this).children("th:first").attr("rowspan")) {
+			rowspan = parseInt($(this).children("th:first").attr("rowspan"));
+		} else rowspan = 1;
+		console.log(rowspan);
+	}
+	if(dark) $(this).addClass("dark");
+	
+	if(rowspan>=4) {
+		$(this).children("td:not([rowspan]), td[rowspan='1']").addClass("small");
+		$(this).children("td[rowspan='2']").addClass("smaller");
+	}
+});
+</script>
+</div>
+</div>
+<div class="item item_type_content" id="node_7939" data-id="7939">
+<div class="item_body">
+<p>&nbsp;</p>
+<p>Je možné používat i <a href="http://www.pslib.cz/rozvrhy" target="_blank">starší rozvrh</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer>
+<div class="paticka_obal">
+<div class="paticka width">
+<div class="box">
+<h2>Studijní obory</h2>
+<ul>
+<li><a href="https://web.pslib.cz/obory/strojirenstvi">Strojírenství</a></li>
+<li><a href="https://web.pslib.cz/obory/technicke-lyceum">Technické lyceum</a></li>
+<li><a href="https://web.pslib.cz/obory/elektrotechnika">Elektrotechnika</a></li>
+<li><a href="https://web.pslib.cz/obory/informacni-technologie">Informační technologie</a></li>
+</ul>
+</div>
+<div class="box">
+<h2>Ve škole</h2>
+<ul>
+<li><a href="https://www.pslib.cz/plan_akci/planmes.htm" target="_blank">Plán akcí</a></li>
+<li><a href="https://web.pslib.cz/pro-verejnost/prumka-tv">Průmka TV</a></li>
+<li><a target="_blank" href="https://www.pslib.cz/openwebmail/">OpenWebmail</a></li>
+</ul>
+</div>
+<div class="box">
+<h2>Zajímavé odkazy</h2>
+<ul>
+<li><a href="https://web.pslib.cz/pro-studenty/skolni-jidelna">Školní jídelna</a></li>
+<li><a target="_blank" href="https://login.microsoftonline.com/?whr=pslib.cloud">Office 365</a></li>
+<li><a href="https://web.pslib.cz/o-skole/dokumenty/pokyny-a-rady">Pokyny a řády</a></li>
+<li><a href="https://web.pslib.cz/o-skole/software">Software</a></li>
+</ul>
+</div>
+<div class="box">
+<h2>Aplikace</h2>
+<ul>
+<li><a target="_blank" href="https://www.pslib.cz/agenda/sign/in/?backlink=7htry">Registrace praxí</a></li>
+<li><a target="_blank" href="https://www.pslib.cz/spud2/index.php">SPUD</a></li>
+<li><a target="_blank" href="https://www.pslib.cz/st/dmp/www/">Dlouhodobé práce</a></li>
+<li><a target="_blank" href="https://moodle.pslib.cz/">Moodle</a></li>
+</ul>
+</div>
+<div class="box">
+<h2>Pro studenty</h2>
+<ul>
+<li><a href="https://web.pslib.cz/pro-studenty/rozvrh">Rozvrhy</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/suplovani">Suplování</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/bakalari">Bakaláři</a></li>
+<li><a href="https://web.pslib.cz/pro-studenty/informace-k-maturite">Info k maturitě</a></li>
+</ul>
+</div>
+<div class="box">
+<h2>Kontakty</h2>
+<ul>
+<li><a href="https://web.pslib.cz/kontakty/studijni-oddelen%C3%AD">Studijní oddělení</a></li>
+<li><a href="https://web.pslib.cz/kontakty/vedeni-skoly">Vedení školy</a></li>
+<li><a href="https://web.pslib.cz/kontakty/vyucujici">Vyučující</a></li>
+<li><a target="_blank" href="http://gmail.pslib.cz/">Email</a></li>
+</ul>
+</div>
+<div class="clr"></div>
+<div class="bottom">
+<div class="left">© pslib.cz 2015 | <a href="https://web.pslib.cz/mapa-webu">mapa webu</a> | <a href="mailto:jan.bohacek@pslib.cz">Nahlásit problém - bo@pslib.cz</a> | <a href="https://web.pslib.cz/admin"> přihlásit</a></div>
+<div class="right">
+Vyrobilo: <a target="_blank" href="http://www.cliquo.cz/">Cliquo</a> &amp; <a class="binteractive" target="_blank" href="http://www.binteractive.cz/">B interactive</a>
+</div>
+<div class="clr"></div>
+</div>
+</div>
+</div>		</footer>
+</div>
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div><div class="ctxMenu ps-container ps-theme-default" style="left: -280px;" data-ps-id="beddb5c6-8c0b-4458-9791-e5c27b117c80"><div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div></body></html>
