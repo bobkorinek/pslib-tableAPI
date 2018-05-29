@@ -9,15 +9,41 @@
 require_once 'Lesson.php';
 require_once 'LessonBuilder.php';
 
+/**
+ * Class Substitution
+ */
 class Substitution
 {
 
+    /**
+     * @var array
+     */
     private $lessonData;
+    /**
+     * @var string
+     */
     private $url;
+    /**
+     * @var DOMXPath
+     */
     private $xpath;
+    /**
+     * @var string
+     */
     private $class;
+    /**
+     * @var string
+     */
     private $weekDay;
 
+    private $pageLoaded = false;
+
+    /**
+     * Substitution constructor.
+     * @param array $lessonData
+     * @param string $class
+     * @param string $url
+     */
     function __construct($lessonData, $class, $url = 'https://www.pslib.cz/suplovani/')
     {
         $this->lessonData   = $lessonData;
@@ -26,23 +52,35 @@ class Substitution
     }
 
 
+    /**
+     * @param string $date
+     * @return bool
+     */
     public function loadPage($date)
     {
-        $dom            = new DOMDocument();
         $strDate        = $this->url.'tr'.$this->parseDate($date).'.htm';
-        $dom->loadHTML(str_replace("&nbsp;",'',file_get_contents($strDate)));
-        $this->xpath    = new DOMXPath($dom);
+        $html           = file_get_contents($strDate);
 
-        switch (date('w', strtotime($date)))
-        {
-            case 1: $this->weekDay = 'Po'; break;
-            case 2: $this->weekDay = 'Út'; break;
-            case 3: $this->weekDay = 'St'; break;
-            case 4: $this->weekDay = 'Čt'; break;
-            case 5: $this->weekDay = 'Pá'; break;
+        if($html !== false){
+            $dom            = new DOMDocument();
+            $dom->loadHTML(str_replace("&nbsp;",'',file_get_contents($strDate)));
+            $this->xpath    = new DOMXPath($dom);
+
+            switch (date('w', strtotime($date)))
+            {
+                case 1: $this->weekDay = 'Po'; break;
+                case 2: $this->weekDay = 'Út'; break;
+                case 3: $this->weekDay = 'St'; break;
+                case 4: $this->weekDay = 'Čt'; break;
+                case 5: $this->weekDay = 'Pá'; break;
+            }
+
+            $this->pageLoaded = true;
         }
+        else
+            $this->pageLoaded = false;
 
-        return $this->xpath;
+        return $this->pageLoaded;
     }
 
 
@@ -51,10 +89,13 @@ class Substitution
         if(isset($date))
             $this->loadPage($date);
 
+        if(!$this->pageLoaded)
+            $this->pageError();
 
-        $rows = $this->xpath->query("//table[@class='tb_supltrid_1']/tr");
-        $isSub = false;
+        $rows       = $this->xpath->query("//table[@class='tb_supltrid_1']/tr");
+        $isSub      = false;
         $newLessons = $this->lessonData;
+        $class      = $class ? $class : $this->class;
 
         for ($i = 1; $i < sizeof($rows); $i++)
         {
@@ -62,7 +103,7 @@ class Substitution
             $pass = false;
 
             $rowData = $this->parseRow($row);
-            if($rowData[0] == $this->class)
+            if($rowData[0] == $class)
             {
                 $isSub = true;
                 $pass = true;
@@ -97,10 +138,42 @@ class Substitution
                 }
             }
         }
-        var_dump($newLessons["Pá"]);
+
+        return $newLessons;
     }
 
 
+    public function containsClass($inClass = null)
+    {
+        if(!$this->pageLoaded)
+            $this->pageError();
+
+        if(!$inClass)
+            $inClass = $this->class;
+        else
+            $inClass = strtoupper($inClass);
+
+        $classes = $this->xpath->query("//tr/td[@class='td_supltrid_1'][1]");
+        foreach ($classes as $class)
+        {
+            if(trim($class->nodeValue) == $inClass)
+                return true;
+        }
+
+        return false;
+    }
+
+
+    private function pageError()
+    {
+        throw new Exception('Page has not been loaded.');
+    }
+
+
+    /**
+     * @param DOMNode $row
+     * @return array
+     */
     private function parseRow($row)
     {
         $columns = $row->childNodes;
@@ -114,6 +187,16 @@ class Substitution
     }
 
 
+    public function isLoaded()
+    {
+        return $this->pageLoaded;
+    }
+
+
+    /**
+     * @param string $str
+     * @return string
+     */
     private function parseDate($str)
     {
         return substr(str_replace('-', '', $str),2);

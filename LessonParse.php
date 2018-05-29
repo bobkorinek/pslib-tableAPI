@@ -8,6 +8,12 @@
 
 include 'LessonBuilder.php';
 
+
+/**
+ * Parses single node to Lesson instance
+ * @param DOMNode $HTMLnode
+ * @return Lesson|null
+ */
 function LessonParse($HTMLnode)
 {
     $data       = $HTMLnode->childNodes;

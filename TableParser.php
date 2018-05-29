@@ -8,31 +8,57 @@
 
 include 'LessonParse.php';
 
+/**
+ * Class TableParser
+ */
 class TableParser
 {
 
+    /**
+     * @var DOMXPath
+     */
     private $xpath;
 
+    private $pageLoaded = false;
+
+    /**
+     * TableParser constructor.
+     * @param $path
+     */
     function __construct($path)
     {
-        $this->loadDocument($path);
+       $this->loadDocument($path);
     }
 
 
+    /**
+     * Loads document with table
+     * @param string $path
+     * @return bool
+     */
     public function loadDocument($path)
     {
-        $dom            = new DOMDocument();
-        $dom->loadHTML(file_get_contents($path));
-        $this->xpath    = new DOMXPath($dom);
+        $html = file_get_contents($path);
+        if($html !== false){
+            $dom                = new DOMDocument();
+            $dom->loadHTML(file_get_contents($path));
+            $this->xpath        = new DOMXPath($dom);
+            $this->pageLoaded   = true;
+        }
+        else
+            $this->pageLoaded   = false;
 
-        return $this->xpath;
+        return $this->pageLoaded;
     }
 
 
-    public function getLessons()
+    public function getLessons($path = null)
     {
-        if(!$this->xpath)
-            return null;
+        if($path)
+            $this->loadDocument($path);
+
+        if(!$this->pageLoaded)
+            $this->pageError();
 
         $tbody      = $this->xpath->query('//tbody')[0];
         if(!$tbody)
@@ -77,5 +103,17 @@ class TableParser
         }
 
         return $days;
+    }
+
+
+    public function isLoaded()
+    {
+        return $this->pageLoaded;
+    }
+
+
+    private function pageError()
+    {
+        throw new Exception('Page has not been loaded');
     }
 }
